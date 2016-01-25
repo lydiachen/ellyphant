@@ -5,4 +5,21 @@ threadsafe: true
 
 handlers:
 - url: /.*
-  script: helloworld.app
+  script: main.app
+
+- url: /signup
+  script: main.app
+  secure: always
+
+- url: /login
+  script: main.app
+  secure: always
+
+- url: /forgot
+  script: main.app
+  secure: always
+
+
+libraries:
+- name: webapp2
+  version: "2.5.1"
