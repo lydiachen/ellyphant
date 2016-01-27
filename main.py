@@ -115,7 +115,10 @@ class Task(ndb.Model):
 
 class MainHandler(BaseHandler):
   def get(self):
-    self.render_template('home.html')
+    if self.request.get('query'):
+      self.render_template('home.html', {'query': self.request.get('query')})
+    else:
+      self.render_template('home.html', {'query': None})
 
   def post(self):
     tasklist_name = self.request.get('tasklist_name', DEFAULT_TASKLIST_NAME)
@@ -159,9 +162,9 @@ class SignupHandler(BaseHandler):
     verification_url = self.uri_for('verification', type='v', user_id=user_id,
       signup_token=token, _full=True)
 
-    msg = '<br/><br/><br/>TODO: send an email to user in order to verify their address. \
-          They will be able to do so by visiting <a href="{url}">{url}</a>'
-
+    #msg = '<br/><br/><br/>TODO: send an email to user in order to verify their address. \
+    #      They will be able to do so by visiting <a href="{url}">{url}</a>'
+    msg = '<br/><br/><br/>Successfully signed up! Please login to continue.'
     self.display_message(msg.format(url=verification_url))
 
 class ForgotPasswordHandler(BaseHandler):

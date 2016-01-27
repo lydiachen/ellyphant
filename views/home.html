@@ -10,7 +10,7 @@
       <div class="content">
 	<header>
 	  <h2>hello there</h2>
-	  <p>I'm launchbot.<br />
+	  <p>I'm your personal assistant.<br />
 	    Sign up to ask me questions!</p>
 	</header>
 	<!--<span class="image"><img src="images/pic01.jpg" alt="" /></span>-->
@@ -23,6 +23,9 @@
       <div class="content">
 	<header>
 	  <h2>Hi, {{user.name}}!</h2>
+	  {% if query %}
+	  Thanks for your request - we'll be right on it!
+	  {% endif %}
 	  <p>What would you like to do today?<br />
 	    <form method="post" action="#">
 	      <div class="12u$">
