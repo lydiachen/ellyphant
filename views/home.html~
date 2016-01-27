@@ -22,24 +22,11 @@
     <section id="banner">
       <div class="content">
 	<header>
-	  <h2>Hi, {{user.name}}!</h2>
+	  <h2>hello, {{ user.name }}</h2>
 	  <p>What would you like to do today?<br />
-	    <form method="post" action="#">
-	      <div class="12u$">
-		<input type="text" name="query" id="user-query" style="width:400px;">
-		<script type="text/javascript">
-		  var text=["I need to manage my payroll.", "I want to file for legal status.", "My team and I are hungry!", "I want to set up accounting.", "I want to set up team communications.", "I want to hire new talent!", "I want to have a social media presence.", "I want to set up a web domain and have emails for our team.", "I want to enter some data.", "I need help with scheduling things!", "I need to find some storage space!"];
-		  var counter = 0;
-		  var elem = document.getElementById("user-query");
-		  setInterval(change, 3000);
-		  function change() {
-		  elem.placeholder = text[counter];
-		  counter++;
-		  if (counter >= text.length) {counter = 0;}
-		  }
-		</script>
-	      </div>
-	    </form>
+	    <div class="12u$">
+	      <textarea name="message" id="message" placeholder="I need to manage my payroll." rows="1"></textarea>
+	    </div>
 	  </p>
 	</header>
 	<!--<span class="image"><img src="images/pic01.jpg" alt="" /></span>-->
@@ -53,27 +40,27 @@
     <section id="four" class="wrapper style1 special fade-up">
       <div class="container">
 	<header class="major">
-	  <h2>We want to help you focus on the things that you care about.</h2>
-	  <p>For everything else, there's launchbot!</p>
+	  <h2>We do stuff.</h2>
+	  <p>Lots of stuff.</p>
 	</header>
 	<div class="box alt">
 	  <div class="row uniform">
 	    <section class="4u 6u(medium) 12u$(xsmall)">
-	      <span class="icon alt major fa-file"></span>
-	      <h3>Office</h3>
-	      <p>Managing payroll, setting up food delivery</p>
+	      <span class="icon alt major fa-area-chart"></span>
+	      <h3>Stuff 1</h3>
+	      <p>Description 1</p>
 	    </section>
 	    <section class="4u 6u$(medium) 12u$(xsmall)">
-	      <span class="icon alt major fa-twitter"></span>
-	      <h3>Social Media</h3>
-	      <p>Social media presence, publicity</p>
+	      <span class="icon alt major fa-comment"></span>
+	      <h3>Stuff 2</h3>
+	      <p>Description 2</p>
 	    </section>
 	    <section class="4u$ 6u(medium) 12u$(xsmall)">
 	      <span class="icon alt major fa-flask"></span>
-	      <h3>Team Communication</h3>
-	      <p>Team communication, workspace, web domain</p>
+	      <h3>Stuff 3</h3>
+	      <p>Description 3</p>
 	    </section>
-	    <!--<section class="4u 6u$(medium) 12u$(xsmall)">
+	    <section class="4u 6u$(medium) 12u$(xsmall)">
 	      <span class="icon alt major fa-paper-plane"></span>
 	      <h3>Stuff 4</h3>
 	      <p>Description 4</p>
@@ -87,9 +74,8 @@
 	      <span class="icon alt major fa-lock"></span>
 	      <h3>Stuff 6</h3>
 	      <p>Description 6</p>
-	    </section>-->
+	    </section>
 	  </div>
-	  <br/><br/><h1 align="center">and anything else you might need...</h1>
 	</div>
       </div>
     </section>

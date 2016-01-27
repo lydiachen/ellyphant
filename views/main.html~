@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>{% block title %}Launchbot{% endblock %}</title>
+    <title>{% block title %}User accounts demo{% endblock %}</title>
     <style>
       input {
         display: block;
@@ -24,7 +24,7 @@
 	  <li><a href="/login">Login</a></li>
 	  <li><a href="/signup" class="button special">Sign Up</a></li>
 	  {% else %}
-	  <li><a href="/authenticated">{{ user.name }}</a></li>
+	  <li><a href="#">{{ user.name }}</a></li>
 	  <li><a href="/logout">Logout</a></li>
 	  {% endif %}
 	  

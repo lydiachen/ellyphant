@@ -33,8 +33,3 @@ class User(webapp2_extras.appengine.auth.models.User):
         return user, timestamp
 
     return None, None
-
-class Task(ndb.Model):
-  user = ndb.StructuredProperty(User)
-  content = ndb.StringProperty(indexed=False)
-  date = ndb.DateTimeProperty(auto_now_add=True)

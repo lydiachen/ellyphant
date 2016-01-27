@@ -2,7 +2,79 @@
 
 {% block maincontent %}
 
-<h1>Congratulations {{ user.name }}!</h1>
-<p>If you see this page, it means that you managed to log in successfully.</p>
+<div id="below-header-centered">
+  <h1>User: {{ user.name }} {{ user.last_name }}</h1>
+  <p>Email: {{ user.email_address }}</p>
+
+  <h1>Your tasks</h1>
+  <table>
+    <thead>
+      <tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Time (EST+5)</th>
+	<th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      {% if task.user.email_address == user.email_address %}
+      <tr>
+	<th>{{ task.user.name }} {{ task.user.last_name }}</th>
+	<th>{{ task.user.email_address }}</th>
+	<th>{{ task.date }}</th>
+	<th>{{ task.content }}</th>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% if user.email_address == "simpavid@gmail.com" or user.email_address == "lslchen@gmail.com" or user.email_address == "etarczynski@gmail.com" %}
+  <h1>Admin Panel</h1>
+  <table>
+    <thead>
+      <tr>
+	<th>Last Name</th>
+	<th>First Name</th>
+	<th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for user in users %}
+  <tr>
+    <th>{{ user.last_name }}</th>
+    <th>{{ user.name }}</th>
+    <th>{{ user.email_address }}</th>
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+
+  <h1>All User Tasks</h1>
+  <table>
+    <thead>
+      <tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Time (EST+5)</th>
+	<th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in tasks %}
+      <tr>
+	<th>{{ task.user.name }} {{ task.user.last_name }}</th>
+	<th>{{ task.user.email_address }}</th>
+	<th>{{ task.date }}</th>
+	<th>{{ task.content }}</th>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+
+  {% endif %}
+</div>
 
 {% endblock %}
